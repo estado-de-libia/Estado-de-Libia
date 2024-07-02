@@ -22,6 +22,15 @@
         .dropdown-menu a:hover {
             background-color: #E5E7EB;
         }
+        .slide-item {
+            transition: opacity 1s ease-in-out;
+        }
+        input[name="slide"]:checked + .slide-item {
+            opacity: 1;
+        }
+        .slide-item:not(:checked) {
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
