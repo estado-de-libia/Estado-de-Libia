@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head id="mihead">
+    <meta charset="UTF-8">
+    <title>Centro Educativo Estado de Libia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+            min-width: 12rem;
+            margin-top: 0.5rem;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: #374151;
+            transition: background-color 0.2s ease;
+        }
+        .dropdown-menu a:hover {
+            background-color: #E5E7EB;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="logo">
+                <img src="colegio.jpg" alt="logotipo del sitio" class="h-20 w-auto">
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-gray-700 hover:text-blue-500">INICIO</a></li>
+                    <li class="relative dropdown">
+                        <a href="#" class="text-gray-700 hover:text-blue-500">NOSOTROS</a>
+                        <ul class="dropdown-menu absolute bg-white shadow-md mt-1 z-10">
+                            <li><a href="historia.html" class="text-gray-700 hover:bg-gray-100">Historia</a></li>
+                            <li><a href="mision.html" class="text-gray-700 hover:bg-gray-100">Misión y Visión</a></li>
+                            <li><a href="himno.html" class="text-gray-700 hover:bg-gray-100">Escudo del Colegio</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="grados.html" class="text-gray-700 hover:text-blue-500">GRADOS</a></li>
+                    <li><a href="enlaces.html" class="text-gray-700 hover:text-blue-500">INTERACTIVO</a></li>
+                    <li><a href="contacto.html" class="text-gray-700 hover:text-blue-500">CONTACTO</a></li>
+                    <li><a href="noticias.html" class="text-gray-700 hover:text-blue-500">INFORMATIVO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="slide relative my-8">
+        <div class="slide-inner relative overflow-hidden h-64">
+            <input class="slide-open" type="radio" id="slide-1" name="slide" hidden checked>
+            <div class="slide-item absolute inset-0">
+                <img src="https://via.placeholder.com/800x400/FF0000" alt="Slide 1" class="w-full h-full object-cover">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" name="slide" hidden>
+            <div class="slide-item absolute inset-0">
+                <img src="https://via.placeholder.com/800x400" alt="Slide 2" class="w-full h-full object-cover">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" name="slide" hidden>
+            <div class="slide-item absolute inset-0">
+                <img src="https://via.placeholder.com/800x400/008000" alt="Slide 3" class="w-full h-full object-cover">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-2" class="slide-control next control-1 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+            <label for="slide-1" class="slide-control prev control-2 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-3" class="slide-control next control-2 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+            <label for="slide-2" class="slide-control prev control-3 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-1" class="slide-control next control-3 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+        </div>
+    </div>
+
+    <footer class="bg-white py-4 mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-700">&copy; Centro Educativo Estado de Libia</p>
+        </div>
+    </footer>
+</body>
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide-open');
+    const totalSlides = slides.length;
+
+    function showNextSlide() {
+        slideIndex++;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+        slides[slideIndex].checked = true;
+    }
+
+    setInterval(showNextSlide, 3000);
+</script>
+</html>

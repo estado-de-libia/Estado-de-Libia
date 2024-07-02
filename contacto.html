@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head id="mihead">
+    <meta charset="UTF-8">
+    <title>Centro Educativo Estado de Libia</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .slide-item {
+            transition: opacity 1s ease-in-out;
+        }
+        input[name="slide"]:checked + .slide-item {
+            opacity: 1;
+        }
+        .slide-item:not(:checked) {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+            <div class="logo">
+                <img src="colegio.jpg" alt="logotipo del sitio" class="h-20 w-auto">
+            </div>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="index.html" class="text-gray-700 hover:text-blue-500">INICIO</a></li>
+                    <li class="relative dropdown">
+                        <a href="index.html" class="text-gray-700 hover:text-blue-500">NOSOTROS</a>
+                        <ul class="dropdown-menu absolute hidden bg-white shadow-md mt-1 z-10">
+                            <li><a href="historia.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Historia</a></li>
+                            <li><a href="mision.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Misión y Visión</a></li>
+                            <li><a href="himno.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Escudo del Colegio</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="grados.html" class="text-gray-700 hover:text-blue-500">GRADOS</a></li>
+                    <li><a href="enlaces.html" class="text-gray-700 hover:text-blue-500">INTERACTIVO</a></li>
+                    <li><a href="contacto.html" class="text-gray-700 hover:text-blue-500">CONTACTO</a></li>
+                    <li><a href="noticias.html" class="text-gray-700 hover:text-blue-500">INFORMATIVO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="slide relative my-8">
+        <div class="slide-inner relative overflow-hidden h-64">
+            <input class="slide-open" type="radio" id="slide-1" name="slide" hidden checked>
+            <div class="slide-item absolute inset-0">
+                <img src="https://via.placeholder.com/800x400/FF0000" alt="Slide 1" class="w-full h-full object-cover">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" name="slide" hidden>
+            <div class="slide-item absolute inset-0">
+                <img src="https://via.placeholder.com/800x400" alt="Slide 2" class="w-full h-full object-cover">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" name="slide" hidden>
+            <div class="slide-item absolute inset-0">
+                <img src="https://via.placeholder.com/800x400/008000" alt="Slide 3" class="w-full h-full object-cover">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-2" class="slide-control next control-1 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+            <label for="slide-1" class="slide-control prev control-2 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-3" class="slide-control next control-2 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+            <label for="slide-2" class="slide-control prev control-3 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-1" class="slide-control next control-3 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+        </div>
+    </div>
+
+    <section class="contact">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold mb-4">Información de Contacto</h2>
+            <div class="contact-wrapper grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="contact-form bg-white p-6 rounded-lg shadow-lg">
+                    <form>
+                        <div class="form-group mb-4">
+                            <input type="text" name="name" placeholder="Nombre" class="w-full p-2 border border-gray-300 rounded">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="email" name="email" placeholder="Email" class="w-full p-2 border border-gray-300 rounded">
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="text" name="subject" placeholder="Asunto" class="w-full p-2 border border-gray-300 rounded">
+                        </div>
+                        <div class="form-group mb-4">
+                            <textarea name="mensaje" placeholder="Mensaje" class="w-full p-2 border border-gray-300 rounded"></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Enviar</button>
+                    </form>
+                </div>
+                <div class="contact-info bg-white p-6 rounded-lg shadow-lg">
+                    <p class="mb-4"><i class="fas fa-map-marker-alt"></i> Escuela República Árabe de Libia, Panamá, Provincia de Panamá</p>
+                    <p class="mb-4"><i class="fas fa-phone"></i> 520-1076</p>
+                    <p class="mb-4"><i class="fas fa-envelope"></i> estadodelibia@gmail.com</p>
+                    <div class="wpb_raw_code wpb_content_element wpb_raw_html">
+                        <div class="wpb_wrapper">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.438286636512!2d-79.50194542632688!3d9.023721889074334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8faca9c46cfd7637%3A0xbb65f7750c521d4d!2sEscuela%20Rep%C3%BAblica%20%C3%81rabe%20de%20Libia!5e0!3m2!1ses!2spa!4v1717895064687!5m2!1ses!2spa" width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-4 mt-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-gray-700">&copy; Centro Educativo Estado de Libia</p>
+        </div>
+    </footer>
+</body>
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide-open');
+    const totalSlides = slides.length;
+
+    function showNextSlide() {
+        slideIndex++;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+        slides[slideIndex].checked = true;
+    }
+
+    setInterval(showNextSlide, 3000);
+</script>
+</html>
