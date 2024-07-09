@@ -23,6 +23,35 @@
         .dropdown-menu a:hover {
             background-color: #E5E7EB;
         }
+        #header {
+			margin:auto;
+			width:500px;
+		    
+		} 
+        .nav li a {
+            background-color:#000;
+			color:#fff;
+			transition: background-color 0.2s ease;
+			text-decoration: none;
+			padding: 0.5rem 1rem;
+			display: block;
+		}
+		.nav li ul {
+			display: none;
+			position: absolute;
+			min-width: 140px;
+		}
+		.nav li:hover > ul {
+			display: block;
+		}
+		.nav li ul li {
+			position: relative;
+		}
+		.nav li ul li ul {
+			left: 164px;
+			width: 250px;
+			top: 0px;
+		}
     </style>
 </head>
 <body class="bg-gray-100">
@@ -54,11 +83,61 @@
     <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-6">GRADOS PRIMARIA Y SUS MATERIAS</h2>
     </main>
-
-    <footer id="pie" class="bg-white shadow mt-4">
-        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 text-center">
-            <p>Centro Educativo Estado de Libia</p>
-        </div>
-    </footer>
+        <div id="header">
+			<ul class="nav">
+				<li><a href="" class="text-center">ESTRUCTURA EDUCATIVA</a>
+					<ul>
+						<li><a href="">KINDER</a>
+							<ul>
+								<li><a href="" target=»_blank»>PRE-KINDER - HORARIO</a></li>
+								<li><a href="" target=»_blank»>KINDER - HORARIO</a></li>
+							</ul>
+						</li>
+						<li><a href="">PRIMER GRADO</a>
+							<ul>
+								<li><a href="" target=»_blank»>1ER GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>1ER GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>1ER GRADO - GRADO HORARIO</a></li>
+							</ul>
+						</li>
+						<li><a href="">SEGUNDO GRADO</a>
+							<ul>
+								<li><a href="" target=»_blank»>2DO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>2DO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>2DO GRADO - GRADO HORARIO</a></li>
+							</ul>
+						</li>
+						<li><a href="">TERCER GRADO</a>
+							<ul>
+								<li><a href="" target=»_blank»>3ER GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>3ER GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>3ER GRADO - GRADO HORARIO</a></li>
+							</ul>
+						</li>
+						<li><a href="">CUARTO GRADO</a>
+							<ul>
+								<li><a href="" target=»_blank»>4TO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>4TO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>4TO GRADO - GRADO HORARIO</a></li>
+							</ul>
+						</li>
+						<li><a href="">QUINTO GRADO</a>
+							<ul>
+								<li><a href="" target=»_blank»>5TO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>5TO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>5TO GRADO - GRADO HORARIO</a></li>
+							</ul>
+						</li>
+						<li><a href="">SEXTO GRADO</a>
+							<ul>
+								<li><a href="" target=»_blank»>6TO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>6TO GRADO - GRADO HORARIO</a></li>
+								<li><a href="" target=»_blank»>6TO GRADO - GRADO HORARIO</a></li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
 </body>
 </html>
