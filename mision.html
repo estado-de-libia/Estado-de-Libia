@@ -23,14 +23,23 @@
         }
         .dropdown-menu a:hover {
             background-color: #E5E7EB;
-		}
+	}
+	.slide-item {
+            transition: opacity 1s ease-in-out;
+        }
+        input[name="slide"]:checked + .slide-item {
+            opacity: 1;
+        }
+        .slide-item:not(:checked) {
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
     <header class="bg-white shadow">
         <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             <div class="logo">
-                <img src="colegio.jpg" alt="logotipo del sitio" class="h-20 w-auto">
+                <img src="Logo de Escuela.jpg" alt="logotipo del sitio" class="h-20 w-auto">
             </div>
             <nav>
                 <ul class="flex space-x-4">
@@ -41,25 +50,27 @@
                             <li><a href="historia.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Historia</a></li>
                             <li><a href="mision.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Misión y Visión</a></li>
                             <li><a href="himno.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Escudo del Colegio</a></li>
+			    <li><a href="#" class="text-gray-700 hover:bg-gray-100">Organigrama</a></li>
                         </ul>
                     </li>
                     <li><a href="grados.html" class="text-gray-700 hover:text-blue-500">GRADOS</a></li>
                     <li><a href="enlaces.html" class="text-gray-700 hover:text-blue-500">INTERACTIVO</a></li>
-                    <li><a href="noticias.html" class="text-gray-700 hover:text-blue-500">INFORMATIVO</a></li>
+		    <li><a href="#" class="text-gray-700 hover:text-blue-500">GALERÍAS</a></li>
+                    <li><a href="noticias.html" class="text-gray-700 hover:text-blue-500">NOTICIAS</a></li>
 		    <li><a href="contacto.html" class="text-gray-700 hover:text-blue-500">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <section class="text-center">
             <h2 class="text-3xl font-bold text-center mb-6">MISIÓN</h2>
-            <p class="mt-2">"Desarrollar estrategias curriculares, atendiendo las necesidades educativas, sociales y culturales de los docentes, para que en manera eficaz, estos puedan llevar a cabo su proceso de aprender".</p>
+            <p class="text-2xl font-bold mt-2 mx-auto px-4 sm:px-6 lg:px-8">"Desarrollar estrategias curriculares, atendiendo las necesidades educativas, sociales y culturales de los docentes, para que en manera eficaz, estos puedan llevar a cabo su proceso de aprender".</p>
         </section>
         <section class="text-center mt-10">
             <h2 class="text-3xl font-bold text-center mb-6">VISIÓN</h2>
-            <p class="mt-2">"Formar niños y niñas con competencias académicas, fundamentadas en principios y valores, que le permitan alcanzar un desarrollo integral".</p>
+            <p class="text-2xl font-bold mt-2 mx-auto px-4 sm:px-6 lg:px-8">"Formar niños y niñas con competencias académicas, fundamentadas en principios y valores, que le permitan alcanzar un desarrollo integral".</p>
         </section>
     </main>
 
@@ -69,4 +80,19 @@
         </div>
     </footer>
 </body>
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide-open');
+    const totalSlides = slides.length;
+
+    function showNextSlide() {
+        slideIndex++;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+        slides[slideIndex].checked = true;
+    }
+
+    setInterval(showNextSlide, 3000);
+</script>
 </html>
