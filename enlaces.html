@@ -23,6 +23,15 @@
         .dropdown-menu a:hover {
             background-color: #E5E7EB;
         }
+	.slide-item {
+            transition: opacity 1s ease-in-out;
+        }
+        input[name="slide"]:checked + .slide-item {
+            opacity: 1;
+        }
+        .slide-item:not(:checked) {
+            opacity: 0;
+        }
     </style>
 </head>
 <body class="bg-gray-100">
@@ -40,18 +49,43 @@
                             <li><a href="historia.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Historia</a></li>
                             <li><a href="mision.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Misión y Visión</a></li>
                             <li><a href="himno.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Escudo del Colegio</a></li>
+			    <li><a href="organigrama.html" class="text-gray-700 hover:bg-gray-100">Organigrama</a></li>
                         </ul>
                     </li>
                     <li><a href="grados.html" class="text-gray-700 hover:text-blue-500">GRADOS</a></li>
                     <li><a href="enlaces.html" class="text-gray-700 hover:text-blue-500">INTERACTIVO</a></li>
-                    <li><a href="noticias.html" class="text-gray-700 hover:text-blue-500">INFORMATIVO</a></li>
+		    <li><a href="galeria.html" class="text-gray-700 hover:text-blue-500">GALERÍAS</a></li>
+                    <li><a href="noticias.html" class="text-gray-700 hover:text-blue-500">NOTICIAS</a></li>
 		    <li><a href="contacto.html" class="text-gray-700 hover:text-blue-500">CONTACTO</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+   <div class="slide relative my-8">
+        <div class="slide-inner relative overflow-hidden h-64">
+            <input class="slide-open" type="radio" id="slide-1" name="slide" hidden checked>
+            <div class="slide-item absolute inset-0">
+                <img src="img2.jpg" alt="Slide 1" class="w-full h-full object-cover">
+            </div>
+            <input class="slide-open" type="radio" id="slide-2" name="slide" hidden>
+            <div class="slide-item absolute inset-0">
+                <img src="img1.jpg" alt="Slide 2" class="w-full h-full object-cover">
+            </div>
+            <input class="slide-open" type="radio" id="slide-3" name="slide" hidden>
+            <div class="slide-item absolute inset-0">
+                <img src="img3.jpg" alt="Slide 3" class="w-full h-full object-cover">
+            </div>
+            <label for="slide-3" class="slide-control prev control-1 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-2" class="slide-control next control-1 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+            <label for="slide-1" class="slide-control prev control-2 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-3" class="slide-control next control-2 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+            <label for="slide-2" class="slide-control prev control-3 absolute inset-y-0 left-0 ml-4 text-3xl text-white cursor-pointer">‹</label>
+            <label for="slide-1" class="slide-control next control-3 absolute inset-y-0 right-0 mr-4 text-3xl text-white cursor-pointer">›</label>
+        </div>
+    </div>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-center mb-6">ENLACES A PLATAFORMAS DIDÁCTICAS</h2>
         
         <div class="text-center space-y-8">
@@ -80,4 +114,19 @@
         </div>
     </footer>
 </body>
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide-open');
+    const totalSlides = slides.length;
+
+    function showNextSlide() {
+        slideIndex++;
+        if (slideIndex >= totalSlides) {
+            slideIndex = 0;
+        }
+        slides[slideIndex].checked = true;
+    }
+
+    setInterval(showNextSlide, 3000);
+</script>
 </html>
